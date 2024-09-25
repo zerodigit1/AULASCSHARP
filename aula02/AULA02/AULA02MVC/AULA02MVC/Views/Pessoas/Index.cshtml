@@ -1,1 +1,6 @@
 ﻿<h1>Pessoas</h1>
+@foreach(Aula02_module.Model.PessoaFisica pf in ViewBag.ListPessoas)
+{ 
+    <p>CPF: @pf.Cpf  NOME:@pf.Nome</p> 
+
+}
