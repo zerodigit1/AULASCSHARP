@@ -38,15 +38,15 @@ namespace AULA02MVC.Controllers
             //}
 
             List<PessoaFisica> allpf = pessoasFacade.GetAllDBPessoasFisicas();
-            ViewBag.Fisico = allpf;
+            ViewBag.ListPessoas = allpf;
             return View();
         }
 
-        public JsonResult List()
-        {
-            return Json(PessoasFacade.ListAllPessoas(),JsonRequestBehavior.AllowGet);
+        //public JsonResult List()
+        //{
+        //    return Json(PessoasFacade.ListAllPessoas(),JsonRequestBehavior.AllowGet);
 
-        }
+        //}
 
         private JsonResult ReturnJson(List<Pessoa> pessoas)
         {

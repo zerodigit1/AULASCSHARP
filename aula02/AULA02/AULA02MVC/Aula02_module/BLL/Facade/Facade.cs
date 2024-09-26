@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,12 +19,11 @@ namespace Aula02_module.BLL.Facade
             // chamar outra classe para obter o banco ce dados
             return null;
         }
-
         public List<PessoaFisica> GetAllDBPessoasFisicas()
         {
             List<PessoaFisica> allpf = new List<PessoaFisica>();
             var dbCon = DBConnection.Instance();
-            dbCon.Server = "Serversql10.freesqldatabase.com";
+            dbCon.Server = "sql10.freesqldatabase.com";
             dbCon.DatabaseName = "sql10733542";
             dbCon.UserName = "sql10733542";
             dbCon.Password = "ac1VlfvwVE";
@@ -36,7 +36,7 @@ namespace Aula02_module.BLL.Facade
                 while (reader.Read())
                 {
                     allpf.Add(new PessoaFisica { Cpf = reader.GetString(2), Nome = reader.GetString(1) });
-                    Console.WriteLine($"ID:{reader.GetString(0)},NOME:{reader.GetString(1)},CPF:{reader.GetString(3)}");
+                    //Console.WriteLine($"ID:{reader.GetString(0)},NOME:{reader.GetString(1)},CPF:{reader.GetString(3)}");
                 }
 
                 dbCon.Close();
@@ -57,5 +57,7 @@ namespace Aula02_module.BLL.Facade
             pessoas.Add(pessoaJuridica);
             return pessoas;
         }
+
+    
     }
 }
