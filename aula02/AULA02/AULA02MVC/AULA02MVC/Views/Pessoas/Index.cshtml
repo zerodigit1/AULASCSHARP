@@ -1,6 +1,14 @@
 ﻿<h1>Pessoas</h1>
-@foreach(Aula02_module.Model.PessoaFisica pf in ViewBag.ListPessoas)
-{ 
-    <p>CPF: @pf.Cpf  NOME:@pf.Nome</p> 
-
-}
+<style>
+    table, th, td {
+        border: 2px solid black;
+         
+    }
+</style>
+<table style="width:100%">
+    <tr style="background-color: #D6EEEE"><th>CPF</th><th>Nome</th></tr>    
+    @foreach (Aula02_module.Model.PessoaFisica pf in ViewBag.ListPessoas)
+    {
+        <tr><td style="width:30%">@pf.Cpf</td><td style="width:70%">@pf.Nome</td></tr>
+    }
+</table>
